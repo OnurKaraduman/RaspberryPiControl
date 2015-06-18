@@ -33,4 +33,33 @@ W = (Fotoğraf Karesinin Genişliği) – (Nesnenin X Kordinatı)
 Eğer W değeri > 20 ise sağa dönmesi gerekir.
 Eğer W değeri < Fotoğraf Karesinin Genişliği -20 ise sola dönmesi gerekir diye bir algoritma yazabiliriz.
 
+3.6.1.5  Mesaj Protokolü
+
+"SPEED"
+
+Bu mesaj kodu istemci tarafından cihaza iletilir. Bu kod başlığı ile gelen mesajı kabul eden cihazımız hızını değiştirmesi gerektiğini anlar ve hızını bu mesajın içerisinde olan değerle değiştirir. Aşağıda bu mesaj koduyla gönderilen mesaja örnek bir mesaj verilmiştir.
+SPEED/İstemciAdi/HızDegeri
+SPEED/Android/40
+"COMMAND"
+Cihazımız bu komutu aldığı zaman sağa, sola, ileriye, geriye komutlarından birini çalıştıracağını anlar. Mesaj çözüldükten sonra mesaj içeriği olarak kabul ettiğimiz komut şekli okunur. Bu komutlarda sabit değer olarak kod içerisinde şu şekilde tanımlanmıştır; 
+COMMAND_STOP  = "0";
+COMMAND_RIGHT = "1";
+COMMAND_LEFT  = "2";
+COMMAND_GO    = "3";
+COMMAND_BACK  = "4"; 
+
+
+
+
+ Bu komut şekline göre komutu gerçekleştirir. Örnek command mesajı:
+COMMAND/Android/0
+"GEAR"
+Bu kod başlığına sahip olan mesaj robot  tarafından kabul edilirse, mesajın içerinin true yada false olmasına göre otomatik kontrol açılır ve robot kendini kontrol etmeye başlar. Engelleri görerek onlara çarpmadan hareketine devam eder. Örnek mesaj:
+GEAR/Android/true
+"FOLLOW"
+Robotumuz bu kod başlığına sahip olan mesajı kabul ettiği zaman, mesajın içeriğine göre nesne takibi yapmaya başlar. Örnek mesaj:
+FOLLOW/Android/true
+"START"
+Start koduna sahip mesajı alan robot, kamera yayınını başlatacağını anlar. Ve kamera yayına başlar. Mesajın içeriğe sahip olması gerekmez. Örnek mesaj:
+START/Android/nocontent
 
