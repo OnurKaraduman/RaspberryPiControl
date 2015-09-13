@@ -1,5 +1,7 @@
 # RaspberryPiControl
 
+youtube link: https://www.youtube.com/watch?v=Lsx7olvhyFo
+
 3.6.1.3 Nesne Tanıma
 
 Öncelikle renk uzayını RBG formatından Hsv’ye dönüştürülür. Opencv kütüphanesi içerisinde HSV maksimum alabilecekleri değerler bu şekildedir H = 180, S = 255, V = 255. 
